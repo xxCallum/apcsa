@@ -1,0 +1,6 @@
+//Section 10 circle area
+
+public class CircleArea
+{
+  public static void main(String[] args)
+  {
