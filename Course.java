@@ -12,6 +12,10 @@ public class Course
   {
     this.name = name;
   }
+  public String toString()
+  {
+    return "this course is " + name;
+  }
   public void setName (String name)
   {
     this.name = name;
