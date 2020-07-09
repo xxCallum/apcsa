@@ -1,20 +1,14 @@
 public class SorterMain {
   public static void main(String[] args) { 
     SorterBubble bubbly = new SorterBubble(10);  // construct a bubble-sorter with 1..10 scrambled
-    bubbly.getNum(1);
-    bubbly.setNum(8, 9);
-    bubbly.getNum(3);
-    bubbly.setNum(7, 8);
-    bubbly.getNum(5);
-    bubbly.setNum(5, 7);
-    bubbly.getNum(7);
-    bubbly.setNum(2, 4);
     bubbly.print(true);                          // print the state of the sorter (true-->and also all 10 numbers)
+    bubbly.indexSwap(1,3);
+    bubbly.print(true);
     bubbly.sort();                               // perform a bubble sort to put the numbers in order
     bubbly.newDecreasing(7);
     bubbly.print(true);                          // print the state again, as well as the sorted numbers
     
-    SorterQuick quickly = new SorterQuick(10);   // construct a quick-sorter with 1..10 scrambled
+    /*SorterQuick quickly = new SorterQuick(10);   // construct a quick-sorter with 1..10 scrambled
     quickly.print(true);                         // ...
     quickly.sort();
     quickly.print(true);
@@ -31,6 +25,6 @@ public class SorterMain {
       quickly = new SorterQuick(n);
       quickly.sort();
       quickly.print(false);
-    }
+    }*/
   }
 }
