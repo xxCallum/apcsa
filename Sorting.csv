@@ -1,0 +1,14 @@
+Alg,Bubble,N,10,Comps,0,swaps,10,gets,0,sets,0,total,10,sorted,false
+8 4 0 2 6 1 7 9 3 5 
+Alg,Bubble,N,10,Comps,90,swaps,30,gets,0,sets,0,total,120,sorted,true
+0 1 2 3 4 5 6 7 8 9 
+Alg,Bubble,N,100,Comps,9900,swaps,2332,gets,0,sets,0,total,12232,sorted,true
+Alg,Bubble,N,200,Comps,39800,swaps,9721,gets,0,sets,0,total,49521,sorted,true
+Alg,Bubble,N,300,Comps,89700,swaps,22983,gets,0,sets,0,total,112683,sorted,true
+Alg,Bubble,N,400,Comps,159600,swaps,37008,gets,0,sets,0,total,196608,sorted,true
+Alg,Bubble,N,500,Comps,249500,swaps,58940,gets,0,sets,0,total,308440,sorted,true
+Alg,Bubble,N,600,Comps,359400,swaps,84881,gets,0,sets,0,total,444281,sorted,true
+Alg,Bubble,N,700,Comps,489300,swaps,118313,gets,0,sets,0,total,607613,sorted,true
+Alg,Bubble,N,800,Comps,639200,swaps,154859,gets,0,sets,0,total,794059,sorted,true
+Alg,Bubble,N,900,Comps,809100,swaps,194409,gets,0,sets,0,total,1003509,sorted,true
+Alg,Bubble,N,1000,Comps,999000,swaps,230000,gets,0,sets,0,total,1229000,sorted,true

@@ -7,6 +7,7 @@ public abstract class SorterBase {
   private int length;
   private int counterget;
   private int counterset;  
+  private int counterswap;
 
   // declare member variables here
   // make them all private, and access them only through the accessors below
@@ -15,23 +16,19 @@ public abstract class SorterBase {
                     int n)    // size of internal array 
   {
     name = a;
-    newIncreasing(n);
+    newScramble(n);
     
     // populate an internal array of numbers 0...n-1 and scramble it
   }
  
   public String getName()        { return name; }    // algorithm name
   public int    getSize()        { return length; }  // internal array length
-  public long   getNumSwaps(int i, int j){           // maintain counters for various operations
-    int swaphold;
-    swaphold = array[i];
-    array[i] = array[j];
-    array[j] = swaphold;
-    return 0; 
+  public long   getNumSwaps(){           // maintain counters for various operations
+    return counterswap; 
   } 
   public long   getNumCompares() { return 0; }
-  public long   getNumGets()     { return 0; }
-  public long   getNumSets()     { return 0; }
+  public long   getNumGets()     { return counterget; }
+  public long   getNumSets()     { return counterset; }
   public int  getNum(int i){ // fetch an internal array value out (and count it)
     counterget += 1;
     return array[i]; 
@@ -41,8 +38,9 @@ public abstract class SorterBase {
     counterset += 1;
   }     // set a value into the internal array (and count it)
   public void reset() {  
-    counterget = 0;
-    counterset = 0;
+    counterget  = 0;
+    counterset  = 0;
+    counterswap = 0;
   }
   
   public void newIncreasing(int n) {
@@ -53,7 +51,6 @@ public abstract class SorterBase {
     {
       array[i] = i;
     }
-
  
   } // populate internal array 0...n-1
   
@@ -71,7 +68,15 @@ public abstract class SorterBase {
   
   public void newScramble(int n) {     // populate internal array with values 0...n-1, scrambled
     // the standard way to scramble n numbers is
-    // i=0; j=a random index 0 <= j < n: swap the values at indices i and j
+    newIncreasing(n);
+    Random ran = new Random();
+    for (int i = 0; i < n; i++) 
+    {
+      int j; 
+      j = ran.nextInt(n);
+      indexSwap(i,j);
+      reset();
+    }// i=0; j=a random index 0 <= j < n: swap the values at indices i and j
     // i=1; j=a random index 0 <= j < n: swap the values at indices i and j
     // ...
     // You will need to google to find out how to get java to give you random numbers 0 <= j < n
@@ -88,6 +93,7 @@ public abstract class SorterBase {
       System.out.println();
     }
     System.out.println(counterget + ", " + counterset);
+    System.out.println(counterswap);
 
   } // print all the counters, and optionally the internal array
  
@@ -98,7 +104,14 @@ public abstract class SorterBase {
   public boolean valueLessThan(int x, int y) { return false; }
   
   // this is for swapping internal array values at indices i and j -- must be counted in getNumSwaps()
-  public void indexSwap(int i, int j) {  }
+  public void indexSwap(int i, int j) {
+    
+    int swaphold;
+    swaphold = array[i];
+    array[i] = array[j];
+    array[j] = swaphold;
+    counterswap +=1;
+  }
   
   // note there is no valueSwap(int x, int y), because java only passes by value, not by reference, 
   // so a function valueSwap() cannot cause the values of x and y to swap in the perspective of the caller
