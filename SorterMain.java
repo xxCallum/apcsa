@@ -11,7 +11,7 @@ public class SorterMain {
     quickly.print(true);
     
     
-    /*// Now we'll exercise the sorters on 100, 200, 300, ... 1000 numbers
+    // Now we'll exercise the sorters on 100, 200, 300, ... 1000 numbers
     for (int n=100; n<=1000; n+=100) {
       bubbly = new SorterBubble(n);              // construct a bubble-sorter with scrambled numbers, but don't print
       bubbly.sort();                             // sort
@@ -22,6 +22,6 @@ public class SorterMain {
       quickly = new SorterQuick(n);
       quickly.sort();
       quickly.print(false);
-    }*/
+    }
   }
 }

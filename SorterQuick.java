@@ -31,11 +31,6 @@ public class SorterQuick extends SorterBase {
       int origini = lo+copyi;
       copyarray[copyi] = getNum(origini);
     }
-    
-    // temporarily zero out this range so it's easier to see what's going on
-    for (int i=lo; i<=hi; i++) {
-      setNum(i,-100);
-    }
     // Pick ay element of the temporary array (might as well be the first or last) to be the 'pivot'
     int pivot = copyarray[0];
     int lowestavail = lo;
@@ -55,7 +50,6 @@ public class SorterQuick extends SorterBase {
       }
     // When you're done there will be one spot left to put the pivot
     }
-    int stophere =1;
     setNum(lowestavail,pivot);
     // Now lo...hi is reordered into 3 groups, from left to right:
     // 1. less-than-pivot 
