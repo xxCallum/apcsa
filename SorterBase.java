@@ -2,7 +2,7 @@ import java.util.Random;
 
 public abstract class SorterBase {
   
-  private int[] array;
+  public int[] array;
   private String name;
   private int length;
   private int counterget;
@@ -68,7 +68,7 @@ public abstract class SorterBase {
   
   public void newScramble(int n) {     // populate internal array with values 0...n-1, scrambled
     // the standard way to scramble n numbers is
-    newIncreasing(n);
+    newDecreasing(n);
     Random ran = new Random();
     for (int i = 0; i < n; i++) 
     {
@@ -76,7 +76,8 @@ public abstract class SorterBase {
       j = ran.nextInt(n);
       indexSwap(i,j);
       //reset();
-    }// i=0; j=a random index 0 <= j < n: swap the values at indices i and j
+    }
+    // i=0; j=a random index 0 <= j < n: swap the values at indices i and j
     // i=1; j=a random index 0 <= j < n: swap the values at indices i and j
     // ...
     // You will need to google to find out how to get java to give you random numbers 0 <= j < n
